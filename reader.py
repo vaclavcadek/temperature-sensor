@@ -8,6 +8,7 @@ if __name__ == '__main__':
             s.flushInput()
             ser_bytes = s.readline()
             t = ser_bytes.decode('utf-8')
+            s.flushOutput()
             log.write('{timestamp},{temperature}'.format(timestamp=datetime.now(), temperature=t))
         except serial.SerialException:
             print('No Serial Port Available!')
